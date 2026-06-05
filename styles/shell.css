@@ -1,0 +1,198 @@
+.sac-shell {
+  --sac-thickness: 86px;
+  --sac-button-size: 66px;
+  --sac-gap: 8px;
+  --sac-padding: 10px;
+  --sac-fit-scale: 1;
+  --sac-offset: 8px;
+  --sac-capsule-offset: var(--sac-offset);
+  --sac-handle-offset: 8px;
+  --sac-handle-x: 8px;
+  --sac-handle-y: 8px;
+  --sac-control-gap: 8px;
+  --sac-control-step: 40px;
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  pointer-events: none;
+  font-family: var(--font-primary, "Signika", sans-serif);
+}
+
+.sac-shell,
+.sac-shell * {
+  box-sizing: border-box;
+}
+
+.sac-capsule {
+  position: absolute;
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sac-gap);
+  padding: var(--sac-padding);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(5, 5, 7, 0.88);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.48);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  will-change: transform, opacity;
+}
+
+.sac-tools {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sac-gap);
+}
+
+.sac-resize-edge {
+  position: absolute;
+  z-index: 1;
+  pointer-events: auto;
+  background: transparent;
+  touch-action: none;
+}
+
+.sac-shell[data-edge="top"] .sac-capsule,
+.sac-shell[data-edge="bottom"] .sac-capsule {
+  min-height: var(--sac-thickness);
+  min-width: 0;
+  max-width: calc(100vw - 16px);
+  border-radius: 999px;
+  left: var(--sac-capsule-offset);
+}
+
+.sac-shell[data-edge="top"] .sac-capsule {
+  top: 0;
+  transform: translate3d(0, 0, 0);
+}
+
+.sac-shell[data-edge="top"][data-open="false"] .sac-capsule {
+  transform: translate3d(0, -100%, 0);
+}
+
+.sac-shell[data-edge="bottom"] .sac-capsule {
+  bottom: 0;
+  transform: translate3d(0, 0, 0);
+}
+
+.sac-shell[data-edge="bottom"][data-open="false"] .sac-capsule {
+  transform: translate3d(0, 100%, 0);
+}
+
+.sac-shell[data-edge="left"] .sac-capsule,
+.sac-shell[data-edge="right"] .sac-capsule {
+  min-width: var(--sac-thickness);
+  min-height: 0;
+  max-height: calc(100vh - 16px);
+  border-radius: 999px;
+  flex-direction: column;
+  top: var(--sac-capsule-offset);
+}
+
+.sac-shell[data-edge="left"] .sac-tools,
+.sac-shell[data-edge="right"] .sac-tools {
+  flex-direction: column;
+}
+
+.sac-shell[data-edge="left"] .sac-capsule {
+  left: 0;
+  transform: translate3d(0, 0, 0);
+}
+
+.sac-shell[data-edge="left"][data-open="false"] .sac-capsule {
+  transform: translate3d(-100%, 0, 0);
+}
+
+.sac-shell[data-edge="right"] .sac-capsule {
+  right: 0;
+  transform: translate3d(0, 0, 0);
+}
+
+.sac-shell[data-edge="right"][data-open="false"] .sac-capsule {
+  transform: translate3d(100%, 0, 0);
+}
+
+.sac-shell[data-edge="top"] .sac-resize-edge {
+  left: 18px;
+  right: 18px;
+  bottom: -5px;
+  height: 10px;
+  cursor: ns-resize;
+}
+
+.sac-shell[data-edge="bottom"] .sac-resize-edge {
+  left: 18px;
+  right: 18px;
+  top: -5px;
+  height: 10px;
+  cursor: ns-resize;
+}
+
+.sac-shell[data-edge="left"] .sac-resize-edge {
+  top: 18px;
+  bottom: 18px;
+  right: -5px;
+  width: 10px;
+  cursor: ew-resize;
+}
+
+.sac-shell[data-edge="right"] .sac-resize-edge {
+  top: 18px;
+  bottom: 18px;
+  left: -5px;
+  width: 10px;
+  cursor: ew-resize;
+}
+
+html.sac-dock-dragging,
+html.sac-dock-dragging * {
+  cursor: grabbing !important;
+}
+
+html.sac-resizing,
+html.sac-resizing * {
+  cursor: inherit;
+}
+
+@media (max-width: 700px) {
+  .sac-shell {
+    /* The rendered size is managed by shell.js so every wall uses the same canonical sizing model. */
+  }
+}
+
+.sac-shell[data-open="false"] .sac-resize-edge {
+  pointer-events: none;
+}
+
+html.sac-resizing .sac-capsule,
+html.sac-resizing .sac-tool-group,
+html.sac-resizing .sac-tool-group::before,
+html.sac-resizing .sac-tool-group::after,
+html.sac-resizing .sac-tool-sources,
+html.sac-resizing .sac-tool-source,
+html.sac-resizing .sac-tool,
+html.sac-resizing .sac-tool-glyph,
+html.sac-resizing .sac-handle,
+.sac-shell.sac-dock-committing .sac-capsule,
+.sac-shell.sac-dock-committing .sac-tool-group,
+.sac-shell.sac-dock-committing .sac-tool-group::before,
+.sac-shell.sac-dock-committing .sac-tool-group::after,
+.sac-shell.sac-dock-committing .sac-tool-sources,
+.sac-shell.sac-dock-committing .sac-tool-source,
+.sac-shell.sac-dock-committing .sac-tool,
+.sac-shell.sac-dock-committing .sac-tool-glyph,
+.sac-shell.sac-dock-committing .sac-handle,
+.sac-shell.sac-initializing .sac-capsule,
+.sac-shell.sac-initializing .sac-tool-group,
+.sac-shell.sac-initializing .sac-tool-group::before,
+.sac-shell.sac-initializing .sac-tool-group::after,
+.sac-shell.sac-initializing .sac-tool-sources,
+.sac-shell.sac-initializing .sac-tool-source,
+.sac-shell.sac-initializing .sac-tool,
+.sac-shell.sac-initializing .sac-tool-glyph,
+.sac-shell.sac-initializing .sac-handle {
+  transition: none !important;
+  animation: none !important;
+}

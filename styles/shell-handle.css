@@ -1,0 +1,81 @@
+.sac-handle {
+  position: absolute;
+  z-index: 3;
+  left: var(--sac-handle-x);
+  top: var(--sac-handle-y);
+  width: 32px;
+  height: 32px;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.28);
+  color: #fff;
+  font-size: 14px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  pointer-events: auto;
+  transform: none;
+  transition: none !important;
+  animation: none !important;
+  box-shadow: none !important;
+  will-change: left, top, opacity;
+}
+
+.sac-handle:focus,
+.sac-handle:focus-visible,
+.sac-handle:active {
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sac-handle i {
+  display: inline-block;
+  font-size: 13px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* The handle is derived from the capsule bounds: leading/left side for horizontal
+   capsules, above for vertical capsules. It no longer rides outward by edge
+   transform, which keeps it centered to the visible container. */
+.sac-shell[data-open="true"] .sac-handle,
+.sac-shell[data-open="false"] .sac-handle {
+  transform: none;
+}
+
+.sac-dock-ghost {
+  position: fixed;
+  z-index: 100001;
+  pointer-events: none;
+  opacity: 0.88;
+}
+
+.sac-dock-ghost[data-snap="none"] {
+  filter: grayscale(0.25);
+}
+
+.sac-dock-ghost .sac-handle {
+  position: static;
+  left: auto;
+  top: auto;
+  transform: none !important;
+  animation: none !important;
+}
+
+html.sac-chev-grab .sac-shell .sac-handle {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  transition: none !important;
+  animation: none !important;
+  pointer-events: none !important;
+}
+
+html.sac-hide-cursor,
+html.sac-hide-cursor * {
+  cursor: none !important;
+}

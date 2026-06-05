@@ -1,0 +1,99 @@
+.sac-tool-divider {
+  display: inline-flex;
+  align-self: stretch;
+  width: max(1px, calc(var(--sac-button-size) * 0.025));
+  min-height: calc(var(--sac-button-size) * 0.72);
+  margin-inline: calc(var(--sac-gap) * 0.65);
+  border-radius: 999px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.28),
+    transparent
+  );
+  opacity: 0.78;
+  flex: 0 0 max(1px, calc(var(--sac-button-size) * 0.025));
+  pointer-events: none;
+}
+
+.sac-shell[data-edge="left"] .sac-tool-divider,
+.sac-shell[data-edge="right"] .sac-tool-divider {
+  align-self: stretch;
+  width: auto;
+  height: max(1px, calc(var(--sac-button-size) * 0.025));
+  min-height: 0;
+  min-width: calc(var(--sac-button-size) * 0.72);
+  margin-block: calc(var(--sac-gap) * 0.65);
+  margin-inline: 0;
+  flex: 0 0 max(1px, calc(var(--sac-button-size) * 0.025));
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.28),
+    transparent
+  );
+}
+
+.sac-tool[data-tone="siren"] .sac-tool-glyph,
+.sac-tool[data-tone="bolt"] .sac-tool-glyph,
+.sac-tool[data-tone="hand"] .sac-tool-glyph {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", var(--font-primary, "Signika", sans-serif);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.62));
+}
+
+.sac-tool[data-tone="siren"][data-active="true"] {
+  border-color: rgba(245, 246, 238, 0.78);
+  box-shadow:
+    inset 0 0 0 var(--sac-active-inset-outline) rgba(245, 246, 238, 0.64),
+    0 0 var(--sac-active-glow) rgba(255, 82, 102, 0.46);
+}
+
+.sac-tool[data-tone="bolt"][data-active="true"] {
+  border-color: rgba(255, 139, 48, 0.74);
+  box-shadow:
+    inset 0 0 0 var(--sac-active-inset-outline) rgba(255, 139, 48, 0.62),
+    0 0 var(--sac-active-glow) rgba(255, 139, 48, 0.44);
+}
+
+.sac-tool[data-tone="hand"][data-active="true"] {
+  border-color: rgba(56, 211, 255, 0.66);
+  box-shadow:
+    inset 0 0 0 var(--sac-active-inset-outline) rgba(56, 211, 255, 0.58),
+    0 0 var(--sac-active-glow) rgba(56, 211, 255, 0.44);
+}
+
+.sac-tool-group[data-active="true"][data-tool-family="hand-cut"] .sac-tool-source {
+  border-color: rgba(245, 246, 238, 0.78);
+  box-shadow:
+    inset 0 0 0 var(--sac-active-inset-outline) rgba(245, 246, 238, 0.64),
+    0 0 var(--sac-active-glow) rgba(255, 82, 102, 0.46),
+    0 3px 12px rgba(0, 0, 0, 0.42);
+}
+
+.sac-tool-group[data-active="true"][data-tool-family="hand-next"] .sac-tool-source {
+  border-color: rgba(255, 139, 48, 0.74);
+  box-shadow:
+    inset 0 0 0 var(--sac-active-inset-outline) rgba(255, 139, 48, 0.62),
+    0 0 var(--sac-active-glow) rgba(255, 139, 48, 0.44),
+    0 3px 12px rgba(0, 0, 0, 0.42);
+}
+
+.sac-tool-group[data-active="true"][data-tool-family="hand-back"] .sac-tool-source {
+  border-color: rgba(56, 211, 255, 0.66);
+  box-shadow:
+    inset 0 0 0 var(--sac-active-inset-outline) rgba(56, 211, 255, 0.58),
+    0 0 var(--sac-active-glow) rgba(56, 211, 255, 0.44),
+    0 3px 12px rgba(0, 0, 0, 0.42);
+}
+
+html.sac-resizing .sac-tool-divider,
+.sac-shell.sac-dock-committing .sac-tool-divider,
+.sac-shell.sac-initializing .sac-tool-divider {
+  transition: none !important;
+  animation: none !important;
+}
+
+.sac-tool[data-tone="bolt"] .sac-tool-glyph {
+  transform: translateX(max(1px, calc(var(--sac-button-size) * 0.036)));
+}
+

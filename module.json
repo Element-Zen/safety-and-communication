@@ -1,0 +1,34 @@
+{
+  "id": "safety-and-communication",
+  "title": "Safety and Communication",
+  "description": "A system-agnostic Foundry VTT toolbar for table safety, hand-raising, presence/status signals, participant source tiles, and an editable safety reference drawer.",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Zenfyre"
+    }
+  ],
+  "url": "https://github.com/Element-Zen/safety-and-communication",
+  "manifest": "https://raw.githubusercontent.com/Element-Zen/safety-and-communication/main/module.json",
+  "download": "https://github.com/Element-Zen/safety-and-communication/releases/download/v1.0.0/safety-and-communication-1.0.0.zip",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14"
+  },
+  "esmodules": [
+    "scripts/module.js"
+  ],
+  "styles": [
+    "styles/shell.css",
+    "styles/shell-tools.css",
+    "styles/hand-tools.css",
+    "styles/presence-tools.css",
+    "styles/shell-handle.css",
+    "styles/shell-motion.css",
+    "styles/shell-reference.css"
+  ],
+  "socket": true,
+  "license": "LICENSE.md",
+  "readme": "README.md",
+  "changelog": "CHANGELOG.md"
+}
