@@ -53,7 +53,7 @@ Safety and Communication is a compact, system-agnostic Foundry VTT module for ke
 
 ## License
 
-Module code and original module content are © 2026 Howard Cohen / Zenfyre. All Rights Reserved. See `LICENSE.md`.
+Module code and original module content are © 2026 Zenfyre. All Rights Reserved. See `LICENSE.md`.
 
 ## Audio Attribution
 
