@@ -2,6 +2,20 @@
 
 Safety and Communication is a compact, system-agnostic Foundry VTT module for keeping table safety and lightweight participation signals visible during play. It gives GMs and players a dockable toolbar for X/N/O style safety signals, hand-raising order, AFK/Open Door presence states, participant/source tiles, and an editable Safety Reference drawer for table rules, Lines, Veils, and safety procedures.
 
+## Screenshots
+
+### Horizontal Toolbar
+
+![Horizontal Toolbar](screenshots/Horizontal.png)
+
+### Horizontal Toolbar with Reference Drawer
+
+![Horizontal Toolbar with Reference Drawer](screenshots/Horizontal_Drawer.png)
+
+### Vertical Toolbar with Reference Drawer
+
+![Vertical Toolbar with Reference Drawer](screenshots/Vertical_Alt_Drawer.png)
+
 ## Package Information
 
 | Field | Value |
