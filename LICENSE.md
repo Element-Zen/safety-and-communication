@@ -1,6 +1,6 @@
 # Safety and Communication License
 
-Copyright © 2026 Howard Cohen / Zenfyre. All Rights Reserved.
+Copyright © 2026 Zenfyre. All Rights Reserved.
 
 The software code, module structure, original text, original design content, and original assets created specifically for Safety and Communication are proprietary. They may not be copied, modified, redistributed, republished, sublicensed, sold, included in another package, or used to create derivative works without prior written permission from the copyright holder.
 
