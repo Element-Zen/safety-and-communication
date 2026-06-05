@@ -1,6 +1,6 @@
 ### Horizontal Toolbar
 
-![Safety and Communication](screenshots/S&Cbanner.png)
+![Safety and Communication](screenshots/S&CBanner.png)
 
 # Safety and Communication
 
